@@ -1,0 +1,1 @@
+for i in `seq 1 20`; do ./alphanumbers.py $i | tr '\n' ' '; echo $i; done | sort | cut -d' ' -f2 | tr -d '\n'; echo
