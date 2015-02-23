@@ -60,7 +60,7 @@ numbertoconvert = -0
 try:
 	numbertoconvert = int(sys.argv[1])
 except Exception:
-	sys.stderr.write("Must pass an int")
+	sys.stderr.write("Must pass an int\n")
 	exit(1)
 
 print stringnumber(numbertoconvert)
