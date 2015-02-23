@@ -56,13 +56,22 @@ def stringnumber(inint):
 	#special case for unreserved numbers under 100
 	return "%s %s" % (stringnumber(inint - (inint % 10)),numbers[inint % 10],)
 
-numbertoconvert = -0
-try:
-	numbertoconvert = int(sys.argv[1])
-except Exception:
-	sys.stderr.write("Must pass an int\n")
-	exit(1)
 
-print stringnumber(numbertoconvert)
+def main():
+    if not sys.argv[1:]:
+        sys.stderr.write("Must pass at least one number\n")
+        exit(1)
+    #Test for integerability
+    try:
+        inputs = map(int,sys.argv[1:])
+    except ValueError:
+        sys.stderr.write("That's not an integer\n")
+        exit(2)
 
+    for i in inputs:
+         print stringnumber(i)
 
+    return 0
+
+if __name__ == "__main__":
+    exit(main())
