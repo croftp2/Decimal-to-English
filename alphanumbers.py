@@ -110,7 +110,7 @@ def main():
         if i == 0:
             print "zero"
         else:
-            print stringnumber(i)
+            print ' '.join(filter(None,stringnumber(i).split()))
 
     return 0
 
