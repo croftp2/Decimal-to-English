@@ -71,7 +71,8 @@ def stringnumber(inint):
         return numbers[inint]
     for value, place in places:
         if inint == value:
-            return place
+            return "one " + place
+#            return place
         elif inint > value:
             return "%s %s %s" % (stringnumber(inint / value),place, stringnumber(inint % value),)
     #special case for unreserved numbers under 100
