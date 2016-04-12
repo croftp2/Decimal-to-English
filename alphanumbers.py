@@ -3,6 +3,7 @@
 #Paul Croft
 #September 16, 2014
 
+import string
 import sys
 
 #reserved numbers
@@ -72,7 +73,6 @@ def stringnumber(inint):
     for value, place in places:
         if inint == value:
             return "one " + place
-#            return place
         elif inint > value:
             return "%s %s %s" % (stringnumber(inint / value),place, stringnumber(inint % value),)
     #special case for unreserved numbers under 100
@@ -108,9 +108,9 @@ def main():
 
     for i in inputs:
         if i == 0:
-            print "zero"
+            print "Zero"
         else:
-            print ' '.join(filter(None,stringnumber(i).split()))
+            print string.capitalize(' '.join(filter(None,stringnumber(i).split())))
 
     return 0
 
